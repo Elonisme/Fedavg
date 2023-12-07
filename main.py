@@ -74,7 +74,7 @@ if __name__ == '__main__':
 
     for iter in range(args['epochs']):
         loss_locals = []
-        if args['all_clients'] == 'false':
+        if not args['all_clients']:
             w_locals = []
         m = max(int(args['frac'] * args['num_users']), 1)
         chosen_user = np.random.choice(range(args['num_users']), m, replace=False)
